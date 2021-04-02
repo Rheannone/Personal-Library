@@ -47,8 +47,8 @@ function SignupFormPage() {
   }
 
   return (
-    <div className="signup-wrapper">
-      <h1>Sign Up</h1>
+    <div className="auth-title">
+      <h1 className="auth-groovy"><span></span><span>S</span><span>i</span><span>g</span><span>n</span><span> </span><span>U</span><span>p</span><span></span></h1>
       <div> <GoogleLogin
     clientId="622766758827-gh1ghhp6c880n96e571stc5gm34rsp96.apps.googleusercontent.com"
     buttonText="Sign up with Google"
