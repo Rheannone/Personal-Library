@@ -27,6 +27,8 @@ module.exports = (sequelize, DataTypes) => {
 
   Items.associate = function(models) {
     Items.belongsTo(models.User, { foreignKey: 'user_id', onDelete: 'CASCADE'});
+    Items.hasMany(models.Borrow, { foreignKey: 'item_id', onDelete: 'CASCADE'});
+    
   };
   return Items;
 };
