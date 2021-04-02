@@ -1,8 +1,8 @@
 /* WHEN THE SCREEN IS LARGER THAN 1000px */
-@media screen and (min-width: 1000px){
+@media screen and (min-width: 700px){
     body {
         background-repeat: no-repeat;
-        background-size: 100%;
+        background-size: 150%;
         background-image:url("../src/images/1722.jpg");
 
     }
@@ -11,7 +11,7 @@
 @media screen and (max-width: 1000px){
     body {
         background-repeat: no-repeat;
-        background-size: 400%;
+        background-size: 500%;
         background-position: center;
         background-image:url("../src/images/1722.jpg");
 
