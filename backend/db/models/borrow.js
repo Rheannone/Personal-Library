@@ -36,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
   Borrow.associate = function(models) {
     Borrow.belongsTo(models.Items, {foreignKey: 'item_id'});
     Borrow.belongsTo(models.User, {foreignKey: 'owner_id'});
-    Borrow.belongTo(models.User, {foreignKey: 'borrower_id' });
+    Borrow.belongsTo(models.User, {foreignKey: 'borrower_id' });
   };
   return Borrow;
 };
