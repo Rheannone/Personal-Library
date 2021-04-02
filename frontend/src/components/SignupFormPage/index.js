@@ -47,7 +47,7 @@ function SignupFormPage() {
   }
 
   return (
-    <>
+    <div className="signup-wrapper">
       <h1>Sign Up</h1>
       <div> <GoogleLogin
     clientId="622766758827-gh1ghhp6c880n96e571stc5gm34rsp96.apps.googleusercontent.com"
@@ -98,7 +98,7 @@ function SignupFormPage() {
         </label>
         <button type="submit">Sign Up</button>
       </form>
-    </>
+    </div>
   );
 }
 

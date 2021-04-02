@@ -1,1 +1,19 @@
-/* TODO Add site wide styles */
+/* WHEN THE SCREEN IS LARGER THAN 1000px */
+@media screen and (min-width: 1000px){
+    body {
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-image:url("../src/images/1722.jpg");
+
+    }
+}
+/* WHEN THE SCREEN IS LESS THAN 1000px */
+@media screen and (max-width: 1000px){
+    body {
+        background-repeat: no-repeat;
+        background-size: 400%;
+        background-position: center;
+        background-image:url("../src/images/1722.jpg");
+
+    }
+}
