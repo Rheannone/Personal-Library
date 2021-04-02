@@ -1,1 +1,32 @@
-/* TODO Add site wide styles */
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Shadows+Into+Light+Two&display=swap');
+
+h1 {
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 6em;
+  }
+
+h2, h3, h4, h5, h6 {
+    font-family: 'Berkshire Swash', cursive;
+    color: darkbrown;
+  }
+  
+
+/* WHEN THE SCREEN IS LARGER THAN 1000px */
+@media screen and (min-width: 700px){
+    body {
+        background-repeat: no-repeat;
+        background-size: 150%;
+        background-image:url("../src/images/1722.jpg");
+
+    }
+}
+/* WHEN THE SCREEN IS LESS THAN 1000px */
+@media screen and (max-width: 1000px){
+    body {
+        background-repeat: no-repeat;
+        background-size: 500%;
+        background-position: center;
+        background-image:url("../src/images/1722.jpg");
+
+    }
+}

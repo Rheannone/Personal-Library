@@ -1,10 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash%family=Bebas+Neue&family=Shadows+Into+Light+Two&family=Roboto&display=swap');
+
+
+
+
 #modal {
+  box-sizing: border-box;
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -15,10 +22,82 @@
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 #modal-content {
+  padding: 20px;
+  border-radius: 6px 6px 6px 6px;
   position: absolute;
-  background-color:white;
+  background-color:rgba(255, 255, 255, 0.9);
 }
+
+.auth-title {
+  margin: 0px;
+  --text: #f7be60; 
+  --shadow: #e4743a; /* Pink */
+  --alt-shadow: lightblue;
+  --tralt-shadow: #9d8d9c;
+}
+
+
+
+.auth-groovy {
+  margin-top: -100px;
+  color: var(--text);
+  text-shadow: 6px 6px var(--shadow),
+               5px 5px var(--shadow),
+               4px 4px var(--shadow),
+               3px 3px var(--shadow),
+               2px 2px var(--shadow),
+               1.5px 1.5px var(--shadow),
+               1px 1px var(--shadow);
+
+
+}
+
+
+
+.auth-groovy span:nth-child(2n) {
+  color: #ED625C;
+  text-shadow: 6px 6px var(--alt-shadow),
+               5px 5px var(--alt-shadow),
+               4px 4px var(--alt-shadow),
+               3px 3px var(--alt-shadow),
+               2px 2px var(--alt-shadow),
+               1.5px 1.5px var(--alt-shadow),
+               1px 1px var(--alt-shadow);
+
+}
+
+.auth-groovy span:nth-child(5n) {
+  color: #b22e6c;
+  text-shadow: 6px 6px var(--tralt-shadow),
+               5px 5px var(--tralt-shadow),
+               4px 4px var(--tralt-shadow),
+               3px 3px var(--tralt-shadow),
+               2px 2px var(--tralt-shadow),
+               1.5px 1.5px var(--tralt-shadow),
+               1px 1px var(--tralt-shadow);
+
+}
+
+input {
+  border-top-width: 0px;
+  border-bottom-width: 3px;
+  border-right-width: 0px;
+  border-left-width: 0px;
+  background: transparent;
+  padding: 5px;
+  padding-bottom: 0px;
+  margin: 5px;
+  font-size: 2em;
+  font-family: 'Shadows Into Light Two', cursive;}
+
+/* .auth-form {
+  grid-template-areas: 
+} */
+
+
+
+          
