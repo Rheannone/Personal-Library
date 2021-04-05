@@ -19,7 +19,7 @@ asyncHandler(async function (req, res) {
 router.patch(
     '/:id',
     asyncHandler(async function (req, res) {
-        const item = await Items.findbyPk(req.params.id);
+        const item = await Items.findByPk(req.params.id);
         item.body = req.body.item;
         await item.save();
         return res.json({item});
