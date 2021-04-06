@@ -1,17 +1,29 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 const { Items } = require('../../db/models');
-const router = require('./session');
+// const router = require('./session');
+
+const router = express.Router();
+
+
+router.post(
+    '/',
+    asyncHandler(async function(req, res) {
+        const item = await Items.create({
+            user_id: req.body.userId,
+            title: req.body.item
+        });
+        return res.json({item})
+    })
+)
 
 router.get('/:userId',
 asyncHandler(async function (req, res) {
-    console.log("REQ PARAMS", req.params)
     const items = await Items.findAll({
         where: {
             user_id: Number(req.params.userId)
         }
     });
-    console.log("FROM API ROUTE", items)
     return res.json({items});
   })
 )

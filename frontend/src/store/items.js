@@ -20,19 +20,36 @@ const removeOne = (id) => ({
 });
 
 export const setOne = (item, userId) => async (dispatch) => {
-    const response = await fetch('/api/items', {
-        method: 'POST',
+    console.log(item, "THIS IS item FROM THE STORE")
+    // expected
+    console.log(userId, "THIS IS USERID FROM THE STORE")
+    // expected
+    const response = await fetch(`/api/items/`, {
+        method: "POST",
         body: JSON.stringify({
             item, 
             userId
         }),
     });
+    // I cannot see any console logs past here
     if (response.ok) {
+        // const data = await response.json()
         dispatch(addOne(response));
     };
+    console.log("THIS IS RESPONSE", response)
     return response;
 }
 
+export const updateOne = (item, id) => async (dispatch) => {
+    const response = await fetch(`/api/items/${id}`, {
+        method: "PATCH",
+        body: JSON.stringify({item})
+    });
+    if (response.ok) {
+        dispatch(addOne(response))
+    };
+    return response;
+}
 export const getItems = (userId) => async (dispatch) => {
     const response = await fetch(`/api/items/${userId}`);
     if (response.ok) {
@@ -52,16 +69,6 @@ export const deleteOne = (id) => async (dispatch) => {
     return response;
 };
 
-export const updateOne = (item, id) => async (dispatch) => {
-    const response = await fetch(`/api/items/${id}`, {
-        method: "PATCH",
-        body: JSON.stringify({item})
-    });
-    if (response.ok) {
-        dispatch(addOne(response))
-    };
-    return response;
-}
 
 function reducer(state = {}, action) {
     let newState = {};
