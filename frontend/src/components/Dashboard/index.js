@@ -12,12 +12,10 @@ function Dashboard() {
 
     useEffect(() => {
         dispatch(getItems(sessionUser.id))
-    }, [dispatch])
+    }, [dispatch, item])
 
     const handleSubmit = e => {
       e.preventDefault();
-      console.log("FROM SUBMIT", item)
-      console.log(sessionUser.id)
       dispatch(setOne(item, sessionUser.id));
       setItem('');
     }
