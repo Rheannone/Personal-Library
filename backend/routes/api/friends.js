@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.get('/:userId',
 asyncHandler(async function (req, res) {
-    const friends = await Friends.findAll({
+    const friends = await Friend.findAll({
         where: {
             user_id: Number(req.params.userId)
         }
