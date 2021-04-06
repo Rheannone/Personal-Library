@@ -20,10 +20,6 @@ const removeOne = (id) => ({
 });
 
 export const setOne = (item, userId) => async (dispatch) => {
-    console.log(item, "THIS IS item FROM THE STORE")
-    // expected
-    console.log(userId, "THIS IS USERID FROM THE STORE")
-    // expected
     const response = await fetch(`/api/items/`, {
         method: "POST",
         body: JSON.stringify({
@@ -31,9 +27,7 @@ export const setOne = (item, userId) => async (dispatch) => {
             userId
         }),
     });
-    // I cannot see any console logs past here
     if (response.ok) {
-        // const data = await response.json()
         dispatch(addOne(response));
     };
     console.log("THIS IS RESPONSE", response)
@@ -53,7 +47,6 @@ export const updateOne = (item, id) => async (dispatch) => {
 export const getItems = (userId) => async (dispatch) => {
     const response = await fetch(`/api/items/${userId}`);
     if (response.ok) {
-        // const data = await response.json();
         dispatch(setList(response));
     };
     return response;
@@ -68,6 +61,17 @@ export const deleteOne = (id) => async (dispatch) => {
     }
     return response;
 };
+
+export const apiBooks = async (title) =>  {
+    const response = await fetch(`http://openlibrary.org/search.json?title=the+lord+of+the+rings`, {
+        method: 'GET',
+    });
+    if (response.ok) {
+        console.log("test", response)
+    }
+    return response;
+}
+
 
 
 function reducer(state = {}, action) {

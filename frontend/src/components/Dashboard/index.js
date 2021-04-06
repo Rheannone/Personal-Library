@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { getItems, setOne } from '../../store/items';
+import { getItems, setOne, apiBooks } from '../../store/items';
 import Item from "../Item"
 
 function Dashboard() {
@@ -20,13 +20,16 @@ function Dashboard() {
       setItem('');
     }
 
+    const handleSearch = e => {
+      dispatch(apiBooks("catcher+in"))
+    }
+
     if (!sessionUser) return <Redirect to='/'/>;
 
     return (
         <>
         <h1>My Library</h1>
         <form onSubmit={handleSubmit}>
-        {/* <input type="hidden" name="_csrf" value="csrfToken" /> */}
 
           <input type="text" value = {item} onChange={(e) => setItem(e.target.value)}/>
           <button type="submit">Add to Library</button>
