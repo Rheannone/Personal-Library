@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { getItems, setOne, apiBooks } from '../../store/items';
+import { getItems, setOne, /*apiBooks*/ } from '../../store/items';
 import Item from "../Item"
 
 function Dashboard() {
@@ -18,10 +18,6 @@ function Dashboard() {
       e.preventDefault();
       dispatch(setOne(item, sessionUser.id));
       setItem('');
-    }
-
-    const handleSearch = e => {
-      dispatch(apiBooks("catcher+in"))
     }
 
     if (!sessionUser) return <Redirect to='/'/>;

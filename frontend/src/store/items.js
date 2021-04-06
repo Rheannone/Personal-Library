@@ -62,15 +62,15 @@ export const deleteOne = (id) => async (dispatch) => {
     return response;
 };
 
-export const apiBooks = async (title) =>  {
-    const response = await fetch(`http://openlibrary.org/search.json?title=the+lord+of+the+rings`, {
-        method: 'GET',
-    });
-    if (response.ok) {
-        console.log("test", response)
-    }
-    return response;
-}
+// export const apiBooks = async (title) =>  {
+//     const response = await fetch(`http://openlibrary.org/search.json?title=the+lord+of+the+rings`, {
+//         method: 'GET',
+//     });
+//     if (response.ok) {
+//         console.log("test", response)
+//     }
+//     return response;
+// }
 
 
 
@@ -78,7 +78,7 @@ function reducer(state = {}, action) {
     let newState = {};
     switch(action.type) {
         case SET_LIST:
-            action.payload.data.items.forEach(item => {
+            action.payload?.data?.items?.forEach(item => {
                 newState[item.id] = {
                     id: item.id,
                     title: item.title,
