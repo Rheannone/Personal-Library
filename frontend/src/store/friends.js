@@ -1,8 +1,11 @@
 import { fetch } from './csrf';
 
-const SET_LIST = 'items/setList';
-const ADD_ONE = 'items/addOne';
-const REMOVE_ONE = 'items/removeOne';
+const SET_LIST = 'friends/setList';
+const ADD_ONE = 'friends/addOne';
+const REMOVE_ONE = 'friends/removeOne';
+const GET_ALL = 'friends/getAll';
+
+
 
 const setFriends = (list) => ({
     type: SET_LIST,
@@ -19,11 +22,23 @@ const removeFriend = (id) => ({
     payload: id
 });
 
+const searchFriend = (email) => ({
+    type: GET_ALL,
+    payload: email
+});
+
+export const searchUsers = (email) => async (dispatch) => {
+    const response = await fetch(`/api/users/${email}`);
+    if (response.ok) {
+        console.log("from search users...", response);
+        dispatch(searchFriend(response))
+    };
+    return response;
+}
 
 export const getFriends = (userId) => async (dispatch) => {
     const response = await fetch(`/api/friends/${userId}`);
     if (response.ok) {
-        console.log("RES FROM FRIENDS", response)
         dispatch(setFriends(response))
     };
     return response;
@@ -40,6 +55,15 @@ function reducer(state = {}, action) {
                 };
             });
             return newState;
+        case GET_ALL:
+            newState= {... state };
+            action.payload?.data?.users?.forEach(user => {
+                newState[user.id] = {
+                    id: user.id,
+                    username: user.username
+                };
+            });
+            return newState
         default:
             return state;
     }
