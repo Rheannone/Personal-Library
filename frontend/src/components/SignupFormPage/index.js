@@ -30,8 +30,7 @@ function SignupFormPage() {
   };
 
   const authGoogle = (googleUser) => {
-    console.log(googleUser.profileObj)
-    console.log(googleUser.profileObj.givenName,)
+    console.log(googleUser.profileObj, "The google user object")
     const email = googleUser.profileObj.email
     const username = googleUser.profileObj.givenName
     const googleToken = googleUser.getAuthResponse().id_token;
