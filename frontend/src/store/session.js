@@ -29,7 +29,6 @@ export const restoreUser = () => async (dispatch) => {
 
 export const signup = (user) => async (dispatch) => {
   const { username, email, password } = user;
-  console.log("password from the store", password)
   const response = await fetch('/api/users', {
     method: 'POST',
     body: JSON.stringify({

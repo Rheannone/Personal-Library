@@ -41,4 +41,17 @@ router.post(
   })
 );
 
+router.get (
+  '/:email',
+  asyncHandler(async function (req, res) {
+    const users = await User.findAll({
+      where: {
+        email: req.params.email
+      }
+    });
+    return res.json({users})
+  })
+)
+
+
 module.exports = router;

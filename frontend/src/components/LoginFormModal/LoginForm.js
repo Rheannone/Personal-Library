@@ -42,7 +42,10 @@ function LoginForm() {
   }
   return (
     <>
-      <h1>Log In</h1>
+    <div className="auth-title">
+    <h1 className="auth-groovy"><span>L</span><span>o</span><span>g</span><span> </span><span>I</span><span>n</span></h1>
+    </div>
+      
       <div> <GoogleLogin
     clientId="622766758827-gh1ghhp6c880n96e571stc5gm34rsp96.apps.googleusercontent.com"
     buttonText="Login"
@@ -57,18 +60,18 @@ function LoginForm() {
           ))}
         </ul>
         <label>
-          Username or Email
           <input
             type="text"
+            placeholder="email or username"
             value={credential}
             onChange={(e) => setCredential(e.target.value)}
             required
           />
         </label>
         <label>
-          Password
           <input
             type="password"
+            placeholder="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
