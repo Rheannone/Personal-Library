@@ -8,10 +8,12 @@ function SearchForm() {
     const dispatch = useDispatch();
     const [errors, setErrors] = useState([]);
     const [email, setEmail] = useState("")
+    const foundFriends = useSelector((state) => Object.values(state.friends))
 
 
     const handleSearch = e => {
         e.preventDefault();
+        
         dispatch(searchUsers(email))
 
     }
@@ -27,7 +29,7 @@ function SearchForm() {
         onChange={(e) => setEmail(e.target.value)}
         />
         <button type="submit">Search</button>
-
+        {foundFriends? foundFriends.map(friend => <p>{friend.username}</p>) : null}
         </form>
         </>
     )
