@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom'
-import { getFriends, searchUsers } from '../../store/friends';
+import { getFriends} from '../../store/friends';
 import Friend from '../Friend'
 
 
@@ -16,17 +16,11 @@ function Friends() {
         dispatch(getFriends(sessionUser.id))
     }, [dispatch])
 
-    const handleSearch = e => {
-        e.preventDefault();
-        dispatch(searchUsers("rheannone@gmail.com"))
-
-    }
     if (!sessionUser) return <Redirect to="/"/>
 
     return (
         <>
         <h1>My Friends</h1>
-        <button type="button" onClick={handleSearch}>Click</button>
         <ul>
             {friendList.map(friend => (
         <Friend key={friend.id} id={friend.id} name={friend.username} />

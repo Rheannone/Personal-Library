@@ -41,6 +41,8 @@ router.post(
   })
 );
 
+
+// GETS all users with matching email 
 router.get (
   '/:email',
   asyncHandler(async function (req, res) {

@@ -30,7 +30,6 @@ const searchFriend = (email) => ({
 export const searchUsers = (email) => async (dispatch) => {
     const response = await fetch(`/api/users/${email}`);
     if (response.ok) {
-        console.log("from search users...", response);
         dispatch(searchFriend(response))
     };
     return response;

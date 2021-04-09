@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { getItems, setOne, /*apiBooks*/ } from '../../store/items';
 import Item from "../Item"
+import SearchFormModal from '../SearchModal'
 
 function Dashboard() {
     const dispatch = useDispatch();
@@ -35,6 +36,10 @@ function Dashboard() {
         <Item key={item.id} id={item.id} title={item.title} desc={item.desc}/>
         ))}
       </ul>
+
+      <h1>Borrows</h1>
+      <SearchFormModal />
+      
             </>
     )
 
