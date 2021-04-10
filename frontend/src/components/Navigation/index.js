@@ -30,7 +30,7 @@ function Navigation({ isLoaded }){
   return (
     <div 
     className='navbar-container'
-    style={themeName === 'light' ? {backgroundColor: "#e4743a"} : {backgroundColor: "#2c002e"}}
+    style={themeName === 'light' ? {backgroundColor: "#d1341f"} : {backgroundColor: "#2c002e"}}
     >
         {/* <NavLink exact to="/">Home</NavLink> */}
         {isLoaded && sessionLinks}

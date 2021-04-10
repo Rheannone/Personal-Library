@@ -5,6 +5,7 @@ import { getItems, setOne, /*apiBooks*/ } from '../../store/items';
 import { useTheme } from '../../context/ThemeContext'
 import dark from '../../images/dark.jpg'
 import light from '../../images/light.jpg'
+import './Dashboard.css'
 import Item from "../Item"
 import SearchFormModal from '../SearchModal'
 
@@ -34,7 +35,7 @@ function Dashboard() {
         className = 'dashboard-container'
         style={themeName === 'dark'? {backgroundImage: `url(${dark})`}:{backgroundImage: `url(${light})`} }
         > 
-        <h1>My Library</h1>
+        <h1 className="dash-header">My Library</h1>
         <form onSubmit={handleSubmit}>
 
           <input type="text" value = {item} onChange={(e) => setItem(e.target.value)}/>
