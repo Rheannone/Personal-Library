@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { getItems, setOne, /*apiBooks*/ } from '../../store/items';
+import { useTheme } from '../../context/ThemeContext'
 import Item from "../Item"
 import SearchFormModal from '../SearchModal'
 
@@ -10,6 +11,8 @@ function Dashboard() {
     const sessionUser = useSelector((state) => state.session.user);
     const itemList = useSelector((state) => Object.values(state.items));
     const [item, setItem ] = useState('');
+    const { themeName } = useTheme();
+
 
     useEffect(() => {
         dispatch(getItems(sessionUser.id))
@@ -25,6 +28,7 @@ function Dashboard() {
 
     return (
         <>
+        <div className = 'dashboard-container'> 
         <h1>My Library</h1>
         <form onSubmit={handleSubmit}>
 
@@ -39,7 +43,7 @@ function Dashboard() {
 
       <h1>Borrows</h1>
       <SearchFormModal />
-      
+      </div>
             </>
     )
 
