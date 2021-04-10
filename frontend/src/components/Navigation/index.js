@@ -4,8 +4,9 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import SignupModal from '../SignupModal'
+import AboutModal from '../AboutModal'
 import { useTheme } from '../../context/ThemeContext'
-import ThemeToggle from '../ThemeToggle'
+
 import './Navigation.css';
 
 function Navigation({ isLoaded }){
@@ -22,6 +23,7 @@ function Navigation({ isLoaded }){
       <>
         <LoginFormModal />
         <SignupModal/>
+        <AboutModal />
         {/* <NavLink to="/signup">Sign Up</NavLink> */}
       </>
     );

@@ -35,7 +35,10 @@ function Dashboard() {
         className = 'dashboard-container'
         style={themeName === 'dark'? {backgroundImage: `url(${dark})`}:{backgroundImage: `url(${light})`} }
         > 
-        <h1 className="dash-header">My Library</h1>
+        <h1 
+        className="dash-header"
+        style={themeName === 'dark'? {filter: "invert(60%)"} : null}
+        >My Library</h1>
         <form onSubmit={handleSubmit}>
 
           <input type="text" value = {item} onChange={(e) => setItem(e.target.value)}/>
