@@ -12,7 +12,8 @@
 
     color: var(--text);
     font-size: 10rem;
-    transform: rotate(-20deg);
+    text-align: center;
+    transform: rotate(-10deg);
     text-shadow: 6px 6px var(--shadow),
                  5px 5px var(--shadow),
                  4px 4px var(--shadow),
@@ -23,6 +24,8 @@
   
   
   }
+
+ 
   
   
   
@@ -48,4 +51,53 @@
                  1.5px 1.5px var(--tralt-shadow),
                  1px 1px var(--tralt-shadow);
   
+  }
+
+
+
+
+
+  .splash-spans:hover {
+    transition: .05s;
+    -webkit-animation-name: wiggle;
+    -ms-animation-name: wiggle;
+    -ms-animation-duration: 9900ms;
+    -webkit-animation-duration: 9900ms;
+    -webkit-animation-iteration-count: 1;
+    -ms-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-in-out;
+    -ms-animation-timing-function: ease-in-out;
+  }
+  
+  @-webkit-keyframes wiggle {
+    
+    0% {-webkit-transform: rotate(-20deg);font-size: 11rem;}
+    25% {-webkit-transform: rotate(-30deg);}
+    50% {-webkit-transform: rotate(-40deg);}
+    /* 75% {-webkit-transform: rotate(-50deg);}
+    100% {-webkit-transform: rotate(-60deg);} */
+  }
+  
+  @-ms-keyframes wiggle {
+
+
+    0% {-ms-transform: rotate(1deg); font-size: 11rem;}
+    25% {-ms-transform: rotate(-1deg);}
+    50% {-ms-transform: rotate(1.5deg);}
+    /* 75% {-ms-transform: rotate(-5deg);}
+    100% {-ms-transform: rotate(0deg);} */
+  }
+  
+  @keyframes wiggle {
+    
+    0% {transform: rotate(-10deg);font-size: 11rem;transition: .05s;}
+    17% {transform: rotate(-20deg);font-size: 14rem;}
+    25% {transform: rotate(-30deg);font-size: 16rem;}
+    
+    /* 36% {transform: rotate(-45deg);font-size: 18rem;}
+    50% {transform: rotate(-50deg);font-size: 20rem;} */
+    /* 66% {transform: rotate(-65deg);font-size: 22rem;}
+    75% {transform: rotate(-70deg);font-size: 24rem;}
+    86% {transform: rotate(-85deg);font-size: 26rem;}
+    100% {transform: rotate(-90deg);font-size: 28rem;} */
   }
