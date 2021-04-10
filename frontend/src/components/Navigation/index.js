@@ -4,11 +4,13 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import SignupModal from '../SignupModal'
+import { useTheme } from '../../context/ThemeContext'
 import ThemeToggle from '../ThemeToggle'
 import './Navigation.css';
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
+  const {themeName} = useTheme();
 
   let sessionLinks;
   if (sessionUser) {
@@ -26,10 +28,13 @@ function Navigation({ isLoaded }){
   }
 
   return (
-    <div>
+    <div 
+    className='navbar-container'
+    style={themeName === 'light' ? {backgroundColor: "#e4743a"} : {backgroundColor: "#2c002e"}}
+    >
         {/* <NavLink exact to="/">Home</NavLink> */}
         {isLoaded && sessionLinks}
-        <ThemeToggle />
+        
     </div>
   );
 }

@@ -35,7 +35,7 @@
 .auth-title {
   margin: 0px;
   --text: #f7be60; 
-  --shadow: #e4743a; /* Pink */
+  --shadow: #e4743a;
   --alt-shadow: lightblue;
   --tralt-shadow: #9d8d9c;
 }
