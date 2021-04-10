@@ -10,6 +10,7 @@ function ThemeToggle() {
             </div>
             <div onClick={() => setThemeName('dark')} className ='dark'>
                 Dark
+                {console.log(themeName, "themeName")}
             </div>
         </div>
     )

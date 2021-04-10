@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import SignupModal from '../SignupModal'
+import ThemeToggle from '../ThemeToggle'
 import './Navigation.css';
 
 function Navigation({ isLoaded }){
@@ -28,6 +29,7 @@ function Navigation({ isLoaded }){
     <div>
         {/* <NavLink exact to="/">Home</NavLink> */}
         {isLoaded && sessionLinks}
+        <ThemeToggle />
     </div>
   );
 }

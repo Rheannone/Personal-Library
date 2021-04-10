@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { getItems, setOne, /*apiBooks*/ } from '../../store/items';
 import { useTheme } from '../../context/ThemeContext'
+import dark from '../../images/dark.jpg'
+import light from '../../images/light.jpg'
 import Item from "../Item"
 import SearchFormModal from '../SearchModal'
 
@@ -28,7 +30,10 @@ function Dashboard() {
 
     return (
         <>
-        <div className = 'dashboard-container'> 
+        <div 
+        className = 'dashboard-container'
+        style={themeName === 'dark'? {backgroundImage: `url(${dark})`}:{backgroundImage: `url(${light})`} }
+        > 
         <h1>My Library</h1>
         <form onSubmit={handleSubmit}>
 

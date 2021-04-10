@@ -26,9 +26,8 @@ h2, h3, h4, h5, h6 {
         height: 100vh;
         left: 100vw;
         background-image: url("../src/images/light.jpg");
-        background-size: 100%;
-
-
+        background-position: center;
+        background-size: cover;
     }
     
 }
@@ -44,6 +43,16 @@ h2, h3, h4, h5, h6 {
         margin: 0px;
         background-position: center;
         background-image:url("../src/images/1722.jpg");
+
+    }
+
+    .dashboard-container {
+        padding: 0px;
+        height: 100vh;
+        left: 100vw;
+        background-image: url("../src/images/light.jpg");
+        background-position: center;
+        background-size: cover;
 
     }
 }
