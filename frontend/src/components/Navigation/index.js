@@ -5,6 +5,7 @@ import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import SignupModal from '../SignupModal'
 import AboutModal from '../AboutModal'
+import ItemListModal from '../ItemListModal'
 import SearchFormModal from '../SearchModal'
 import { useTheme } from '../../context/ThemeContext'
 
@@ -21,6 +22,7 @@ function Navigation({ isLoaded }){
       <ProfileButton user={sessionUser} />
       <AboutModal/>
       <SearchFormModal />
+      <ItemListModal />
       </>
     );
   } else {
