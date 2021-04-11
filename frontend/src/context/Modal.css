@@ -22,7 +22,7 @@
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 #modal-content {
@@ -35,7 +35,7 @@
 .auth-title {
   margin: 0px;
   --text: #f7be60; 
-  --shadow: #e4743a; /* Pink */
+  --shadow: #e4743a;
   --alt-shadow: lightblue;
   --tralt-shadow: #9d8d9c;
 }

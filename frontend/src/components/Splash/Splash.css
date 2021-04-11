@@ -1,0 +1,101 @@
+.splash-title {
+
+    --text: #f7be60; 
+    --shadow: #e4743a;
+    --alt-shadow: lightblue;
+    --tralt-shadow: #9d8d9c;
+  }
+  
+  
+  
+  .splash-groovy {
+
+    color: var(--text);
+    font-size: 10rem;
+    text-align: center;
+    transform: rotate(-10deg);
+    text-shadow: 6px 6px var(--shadow),
+                 5px 5px var(--shadow),
+                 4px 4px var(--shadow),
+                 3px 3px var(--shadow),
+                 2px 2px var(--shadow),
+                 1.5px 1.5px var(--shadow),
+                 1px 1px var(--shadow);
+  
+  
+  }
+
+ 
+  
+  
+  
+  .splash-groovy span:nth-child(2n) {
+    color: #ED625C;
+    text-shadow: 6px 6px var(--alt-shadow),
+                 5px 5px var(--alt-shadow),
+                 4px 4px var(--alt-shadow),
+                 3px 3px var(--alt-shadow),
+                 2px 2px var(--alt-shadow),
+                 1.5px 1.5px var(--alt-shadow),
+                 1px 1px var(--alt-shadow);
+  
+  }
+  
+  .splash-groovy span:nth-child(5n) {
+    color: #b22e6c;
+    text-shadow: 6px 6px var(--tralt-shadow),
+                 5px 5px var(--tralt-shadow),
+                 4px 4px var(--tralt-shadow),
+                 3px 3px var(--tralt-shadow),
+                 2px 2px var(--tralt-shadow),
+                 1.5px 1.5px var(--tralt-shadow),
+                 1px 1px var(--tralt-shadow);
+  
+  }
+
+
+
+
+
+  .splash-spans:hover {
+    transition: .05s;
+    -webkit-animation-name: wiggle;
+    -ms-animation-name: wiggle;
+    -ms-animation-duration: 9900ms;
+    -webkit-animation-duration: 9900ms;
+    -webkit-animation-iteration-count: 1;
+    -ms-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-in-out;
+    -ms-animation-timing-function: ease-in-out;
+  }
+  
+  @-webkit-keyframes wiggle {
+    
+    0% {-webkit-transform: rotate(-5deg);font-size: 11rem;}
+    25% {-webkit-transform: rotate(5deg);}
+    50% {-webkit-transform: rotate(-40deg);}
+
+  }
+  
+  @-ms-keyframes wiggle {
+
+
+    0% {-ms-transform: rotate(1deg); font-size: 11rem;}
+    25% {-ms-transform: rotate(-1deg);}
+    50% {-ms-transform: rotate(1.5deg);}
+
+  }
+  
+  @keyframes wiggle {
+    
+    0% {transform: rotate(-5deg);font-size: 11rem;transition: .05s;}
+    17% {transform: rotate(5deg);font-size: 14rem;}
+    25% {transform: rotate(-5deg);font-size: 16rem;}
+    
+    /* 36% {transform: rotate(-45deg);font-size: 18rem;}
+    50% {transform: rotate(-50deg);font-size: 20rem;} */
+    /* 66% {transform: rotate(-65deg);font-size: 22rem;}
+    75% {transform: rotate(-70deg);font-size: 24rem;}
+    86% {transform: rotate(-85deg);font-size: 26rem;}
+    100% {transform: rotate(-90deg);font-size: 28rem;} */
+  }
