@@ -5,6 +5,7 @@ import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import SignupModal from '../SignupModal'
 import AboutModal from '../AboutModal'
+import SearchFormModal from '../SearchModal'
 import { useTheme } from '../../context/ThemeContext'
 
 import './Navigation.css';
@@ -16,7 +17,11 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
+      <>
       <ProfileButton user={sessionUser} />
+      <AboutModal/>
+      <SearchFormModal />
+      </>
     );
   } else {
     sessionLinks = (
@@ -24,7 +29,7 @@ function Navigation({ isLoaded }){
         <LoginFormModal />
         <SignupModal/>
         <AboutModal />
-        {/* <NavLink to="/signup">Sign Up</NavLink> */}
+        
       </>
     );
   }
@@ -34,7 +39,7 @@ function Navigation({ isLoaded }){
     className='navbar-container'
     style={themeName === 'light' ? {backgroundColor: "#d1341f"} : {backgroundColor: "#2c002e"}}
     >
-        {/* <NavLink exact to="/">Home</NavLink> */}
+        
         {isLoaded && sessionLinks}
         
     </div>

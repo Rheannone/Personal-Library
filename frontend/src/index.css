@@ -3,11 +3,16 @@
 h1 {
     font-family: 'Berkshire Swash', cursive;
     font-size: 6em;
+    margin:0px;
+    padding:0px;
   }
 
 h2, h3, h4, h5, h6 {
     font-family: 'Berkshire Swash', cursive;
     color: darkbrown;
+    margin:0px;
+    padding:0px;
+
   }
   
 

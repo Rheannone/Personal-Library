@@ -5,5 +5,8 @@
 .navbar-container {
   background-color: #e4743a;
   height: 10vh;
-  width: 100vw
+  width: 100vw;
+  top:0;
+  left:0;
+  right: 0;
 }

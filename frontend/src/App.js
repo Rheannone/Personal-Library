@@ -28,12 +28,6 @@ function App() {
           <Route path ='/friends'>
             <Friends />
           </Route>
-          {/* <Route path="/login" >
-            <LoginFormPage />
-          </Route> */}
-          {/* <Route path="/signup">
-            <SignupFormPage />
-          </Route> */}
         </Switch>
       )}
     </>

@@ -71,11 +71,10 @@
   
   @-webkit-keyframes wiggle {
     
-    0% {-webkit-transform: rotate(-20deg);font-size: 11rem;}
-    25% {-webkit-transform: rotate(-30deg);}
+    0% {-webkit-transform: rotate(-5deg);font-size: 11rem;}
+    25% {-webkit-transform: rotate(5deg);}
     50% {-webkit-transform: rotate(-40deg);}
-    /* 75% {-webkit-transform: rotate(-50deg);}
-    100% {-webkit-transform: rotate(-60deg);} */
+
   }
   
   @-ms-keyframes wiggle {
@@ -84,15 +83,14 @@
     0% {-ms-transform: rotate(1deg); font-size: 11rem;}
     25% {-ms-transform: rotate(-1deg);}
     50% {-ms-transform: rotate(1.5deg);}
-    /* 75% {-ms-transform: rotate(-5deg);}
-    100% {-ms-transform: rotate(0deg);} */
+
   }
   
   @keyframes wiggle {
     
-    0% {transform: rotate(-10deg);font-size: 11rem;transition: .05s;}
-    17% {transform: rotate(-20deg);font-size: 14rem;}
-    25% {transform: rotate(-30deg);font-size: 16rem;}
+    0% {transform: rotate(-5deg);font-size: 11rem;transition: .05s;}
+    17% {transform: rotate(5deg);font-size: 14rem;}
+    25% {transform: rotate(-5deg);font-size: 16rem;}
     
     /* 36% {transform: rotate(-45deg);font-size: 18rem;}
     50% {transform: rotate(-50deg);font-size: 20rem;} */
