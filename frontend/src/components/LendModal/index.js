@@ -18,4 +18,4 @@ function LendFormModal() {
   );
 }
 
-export default ItemListModal;
+export default LendFormModal;
