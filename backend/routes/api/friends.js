@@ -23,10 +23,18 @@ asyncHandler(async function (req, res) {
 router.post('/',
 asyncHandler(async function (req, res) {
 
+    const friendRecord = await User.findAll({
+        where: {
+            id: req.body.friendId
+        }
+    })
+
+    const friendUsername = friendRecord[0].dataValues.username 
+
     const friend = await Friend.create({
         user_id: req.body.userId,
         friend_id: req.body.friendId,
-        friend_username: "Rhea"
+        friend_username: friendUsername
         })
         return res.json({friend});
 }))
