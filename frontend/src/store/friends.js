@@ -28,7 +28,7 @@ const searchFriend = (email) => ({
 });
 
 export const postFriend = (userId, friendId) => async (dispatch) => {
-    const response = await fetch(`/api/items`, {
+    const response = await fetch(`/api/friends`, {
         method: "POST",
         body: JSON.stringify({
             userId,

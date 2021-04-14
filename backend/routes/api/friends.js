@@ -1,5 +1,6 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
+// const { searchUsers } = require('../../../frontend/src/store/friends');
 const { Friend } = require('../../db/models');
 const { User } = require('../../db/models');
 
@@ -17,6 +18,18 @@ asyncHandler(async function (req, res) {
   })
 );
 
+
+// add a friend
+router.post('/',
+asyncHandler(async function (req, res) {
+
+    const friend = await Friend.create({
+        user_id: req.body.userId,
+        friend_id: req.body.friendId,
+        friend_username: "Rhea"
+        })
+        return res.json({friend});
+}))
 
 
 // router.get (
