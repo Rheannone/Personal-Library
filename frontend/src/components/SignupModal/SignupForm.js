@@ -37,7 +37,6 @@ function SignupFormPage() {
     const googleToken = googleUser.getAuthResponse().id_token;
     const password = googleToken;
     setErrors([])
-    console.log(email)
     
     return dispatch(sessionActions.signup({ email, username, password }))
     .catch(res => {

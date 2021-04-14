@@ -6,6 +6,12 @@ import './Splash.css'
 
 
 function Splash() {
+    const sessionUser = useSelector((state) => state.session.user);
+
+
+    if (sessionUser) {
+        return <Redirect to="/dashboard" />;
+      }
 
 
 

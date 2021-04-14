@@ -15,8 +15,7 @@ function LoginForm() {
 
 
   if (sessionUser) {
-    console.log(sessionUser)
-    return <Redirect to="/" />;
+    return <Redirect to="/dashboard" />;
   }
 
   const handleSubmit = (e) => {
