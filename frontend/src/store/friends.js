@@ -27,6 +27,21 @@ const searchFriend = (email) => ({
     payload: email
 });
 
+export const postFriend = (userId, friendId) => async (dispatch) => {
+    const response = await fetch(`/api/items`, {
+        method: "POST",
+        body: JSON.stringify({
+            userId,
+            friendId,
+        }),
+    });
+
+    if (response.ok) {
+        dispatch(addFriend(response))
+    };
+    return response;
+}
+
 export const searchUsers = (email) => async (dispatch) => {
     const response = await fetch(`/api/users/${email}`);
     if (response.ok) {
@@ -46,6 +61,13 @@ export const getFriends = (userId) => async (dispatch) => {
 function reducer(state = {}, action) {
     let newState = {};
     switch(action.type) {
+        case ADD_ONE:
+            newState = { ...state };
+            newState[action.payload.id] = {
+                userId: action.payload.userId,
+                friendId: action.payload.friendId
+            };
+            return newState;
         case SET_LIST:
             action.payload?.data?.friends?.forEach(friend => {
                 newState[friend.id] ={

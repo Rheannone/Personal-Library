@@ -16,8 +16,8 @@ function Friend({id, name}) {
         )}
         {!edit && (
           <li>
-            {text} <span onClick={console.log("delete")}>x </span>
-            <span > edit</span>
+            {text} <span onClick={console.log("added")}>+</span>
+            
           </li>
         )}
       </>

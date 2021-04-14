@@ -15,7 +15,7 @@ function SignupFormPage() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
 
-  if (sessionUser) return <Redirect to="/" />;
+  if (sessionUser) return <Redirect to="/dashboard" />;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,8 +30,6 @@ function SignupFormPage() {
   };
 
   const authGoogle = (googleUser) => {
-    console.log(googleUser.profileObj)
-    console.log(googleUser.profileObj.givenName,)
     const email = googleUser.profileObj.email
     const username = googleUser.profileObj.givenName
     const googleToken = googleUser.getAuthResponse().id_token;

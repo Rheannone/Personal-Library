@@ -1,7 +1,7 @@
 const express = require('express');
 const { check } = require('express-validator');
 const asyncHandler = require('express-async-handler');
-
+const { Op } = require("sequelize");
 const { handleValidationErrors } = require('../../utils/validation');
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
 const { User } = require('../../db/models');
@@ -48,7 +48,9 @@ router.get (
   asyncHandler(async function (req, res) {
     const users = await User.findAll({
       where: {
-        email: req.params.email
+        email: {
+          [Op.like]: req.params.email
+        }
       }
     });
     return res.json({users})
