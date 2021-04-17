@@ -2,12 +2,14 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import session from './session';
 import items from './items';
-import friends from './friends'
+import friends from './friends';
+import borrows from './borrows';
 
 const rootReducer = combineReducers({
   session,
   items,
   friends,
+  borrows,
 
 });
 

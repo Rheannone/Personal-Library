@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { getItems, setOne, /*apiBooks*/ } from '../../store/items';
+import { getBorrows } from '../../store/borrows'
 import { useTheme } from '../../context/ThemeContext'
 import dark from '../../images/dark.jpg'
 import light from '../../images/light.jpg'
@@ -20,6 +21,10 @@ function Dashboard() {
     useEffect(() => {
         dispatch(getItems(sessionUser.id))
     }, [dispatch, item])
+
+    useEffect(() => {
+      dispatch(getBorrows(sessionUser.id))
+    }, [dispatch])
 
     const handleSubmit = e => {
       e.preventDefault();

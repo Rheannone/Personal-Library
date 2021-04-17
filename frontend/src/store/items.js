@@ -30,7 +30,6 @@ export const setOne = (item, userId) => async (dispatch) => {
     if (response.ok) {
         dispatch(addOne(response));
     };
-    console.log("THIS IS RESPONSE", response)
     return response;
 }
 

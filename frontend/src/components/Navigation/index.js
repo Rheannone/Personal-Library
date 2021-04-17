@@ -7,6 +7,7 @@ import SignupModal from '../SignupModal'
 import AboutModal from '../AboutModal'
 import ItemListModal from '../ItemListModal'
 import SearchFormModal from '../SearchModal'
+import ManageModal from '../ManageModal'
 import { useTheme } from '../../context/ThemeContext'
 
 import './Navigation.css';
@@ -23,6 +24,7 @@ function Navigation({ isLoaded }){
       <AboutModal/>
       <SearchFormModal />
       <ItemListModal />
+      <ManageModal />
       </>
     );
   } else {
