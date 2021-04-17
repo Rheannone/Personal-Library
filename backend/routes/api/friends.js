@@ -40,18 +40,16 @@ asyncHandler(async function (req, res) {
 }))
 
 
-// router.get (
-//     '/:email',
-//     asyncHandler(async function (req, res) {
-//       const users = await User.findAll({
-//         where: {
-//           email: req.params.email
-//         }
-//       });
-//       return res.json({users})
-//     })
-//   )
-  
+//delete a friend
+router.delete(
+    '/:id',
+    asyncHandler(async function (req, res) {
+        const friend = await Friend.findByPk(req.params.id);
+        await friend.destroy();
+        return res.json({ message : "friend deleted"})
+    })
+)
+
 
 
 module.exports = router

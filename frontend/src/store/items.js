@@ -88,7 +88,7 @@ function reducer(state = {}, action) {
             });
             return newState;
         case ADD_ONE:
-            newState= {... state };
+            newState= {...state};
             newState[action.payload.id ] = {
                 id: action.payload.id,
                 title: action.payload.title, 
@@ -96,7 +96,7 @@ function reducer(state = {}, action) {
             }
             return newState;
         case REMOVE_ONE:
-            newState = {... state };
+            newState = {...state};
             delete newState[action.payload];
             return newState;
         default:

@@ -8,6 +8,8 @@ function Item({id, title, desc}) {
     const dispatch = useDispatch();
   
     const handleDelete = () => dispatch(deleteOne(id));
+
+    
     const flipEdit = async () => {
       await dispatch(updateOne(text, id))
       setEdit((prev) => !prev);

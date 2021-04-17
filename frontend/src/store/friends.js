@@ -27,6 +27,16 @@ const searchFriend = (email) => ({
     payload: email
 });
 
+export const deleteFriend = (id) => async (dispatch) => {
+    const response = await fetch(`/api/friends/${id}`, {
+        method: 'DELETE',
+    });
+    if (response.ok) {
+        dispatch(removeFriend(id))
+    }
+    return response;
+}
+
 export const postFriend = (userId, friendId) => async (dispatch) => {
     const response = await fetch(`/api/friends`, {
         method: "POST",
@@ -85,6 +95,10 @@ function reducer(state = {}, action) {
                 };
             });
             return newState
+        case REMOVE_ONE:
+            newState = {...state};
+            delete newState[action.payload];
+            return newState;
         default:
             return state;
     }

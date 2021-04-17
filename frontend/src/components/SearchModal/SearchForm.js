@@ -14,7 +14,6 @@ function SearchForm() {
 
     const handleSearch = e => {
         e.preventDefault();
-        
         dispatch(searchUsers(email))
 
     }
@@ -32,7 +31,7 @@ function SearchForm() {
         <button type="submit">Search</button>
         {foundFriends? foundFriends.map(friend => (
             <Friend key={friend.id}  id={friend.id} name={friend.username} />
-        )) : <p>no friends with that email address were found </p>}
+        )) : <p>no friends with that email address were found </p> }
         </form>
         </>
     )

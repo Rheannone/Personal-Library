@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { postFriend } from '../../store/friends'
+import { postFriend, deleteFriend } from '../../store/friends'
 
 function Friend({id, name}) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -13,6 +13,9 @@ function Friend({id, name}) {
       dispatch(postFriend(sessionUser.id, id))
     }
 
+    const handleDelete = () => dispatch(deleteFriend(id))
+
+
     return (
         <>
         {edit && (
@@ -23,7 +26,7 @@ function Friend({id, name}) {
         )}
         {!edit && (
           <li>
-            {text} <span onClick={handleAdd}>+</span>
+            {text} <span onClick={handleAdd}>+</span><span onClick={handleDelete}>x</span>
             
           </li>
         )}

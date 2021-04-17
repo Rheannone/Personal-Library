@@ -42,7 +42,7 @@ router.delete(
     asyncHandler(async function (req, res) {
         const item = await Items.findByPk(req.params.id);
         await item.destroy();
-        return res.json({ message : "item added! "})
+        return res.json({ message : "item deleted! "})
     })
 )
 
