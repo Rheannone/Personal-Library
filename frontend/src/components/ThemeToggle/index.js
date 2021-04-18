@@ -1,16 +1,15 @@
 import { useTheme } from '../../context/ThemeContext';
+import './ThemeToggle.css'
 
 function ThemeToggle() {
     const { setThemeName, themeName } = useTheme();
 
+    const toggleTheme = () => themeName ==='light' ?  setThemeName('dark') : setThemeName('light')
+
     return (
         <div className={`theme-toggle ${themeName}`}>
-            <div onClick={() => setThemeName('light')} className ='light'>
-                Light
-            </div>
-            <div onClick={() => setThemeName('dark')} className ='dark'>
-                Dark
-                {console.log(themeName, "themeName")}
+            <div onClick={toggleTheme} className="themetoggle">
+                
             </div>
         </div>
     )

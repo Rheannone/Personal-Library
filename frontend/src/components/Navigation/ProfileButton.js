@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
-import ThemeToggle from '../ThemeToggle'
+
 
 
 function ProfileButton({ user }) {
@@ -47,7 +47,7 @@ function ProfileButton({ user }) {
         </ul>
       )}
 
-      <ThemeToggle />
+
     </>
   );
 }

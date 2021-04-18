@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { getItems, setOne, /*apiBooks*/ } from '../../store/items';
 import { getFriends } from '../../store/friends';
 import { useTheme } from '../../context/ThemeContext'
+import ThemeToggle from '../ThemeToggle'
 import dark from '../../images/dark.jpg'
 import light from '../../images/light.jpg'
 import './Dashboard.css'
@@ -41,7 +42,7 @@ function Dashboard() {
         className = 'dashboard-container'
         style={themeName === 'dark'? {backgroundImage: `url(${dark})`}:{backgroundImage: `url(${light})`} }
         > 
-
+         <div><ThemeToggle /></div> 
       </div>
             </>
     )
