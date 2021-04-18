@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
 import Manage from './Manage'
+import './Manage.css'
 
 
 function ManageModal() {

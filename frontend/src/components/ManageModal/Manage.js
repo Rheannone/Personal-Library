@@ -16,14 +16,13 @@ function ManageModal() {
   
 
     return(
-        <>
+        <div>
         <div className="auth-title">
         <h1 className='auth-groovy'><span>M</span><span>a</span><span>n</span><span>a</span><span>g</span><span>e</span></h1>
         </div>
         <div>
-            <div>
+            <div className='manage-modal'>
                 <p>{sessionUser.username}'s Library </p>
-            </div>
             <div className='table-container'>
             <table id="manage">
                 <tr>
@@ -34,14 +33,15 @@ function ManageModal() {
                 </tr>
                 
                 {itemList.map(item => (
-        <Borrow key={item.id} id={item.id} title={item.title} borrower={item.desc}/>
-        ))}
+                    <Borrow key={item.id} id={item.id} title={item.title} borrower={item.desc}/>
+                    ))}
         
             </table>
             </div>
+                    </div>
 
         </div>
-        </>
+        </div>
     )
 }
 

@@ -1,3 +1,15 @@
 .table-container {
     overflow: scroll;
 }
+
+.manage-modal {
+
+    background-image: url('https://png.pngtree.com/thumb_back/fw800/back_our/20190617/ourmid/pngtree-old-paper-texture-h5-background-image_126163.jpg');
+    border-radius: 2%;
+    box-shadow: 5px 10px grey;
+    margin: 10px;
+    height: 100%;
+    overflow: auto;
+
+}
+
