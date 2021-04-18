@@ -2,13 +2,12 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { getItems, setOne, /*apiBooks*/ } from '../../store/items';
-import { getBorrows } from '../../store/borrows'
+import { getFriends } from '../../store/friends';
 import { useTheme } from '../../context/ThemeContext'
 import dark from '../../images/dark.jpg'
 import light from '../../images/light.jpg'
 import './Dashboard.css'
-import Item from "../Item"
-import SearchFormModal from '../SearchModal'
+
 
 function Dashboard() {
     const dispatch = useDispatch();
@@ -21,6 +20,7 @@ function Dashboard() {
 
     useEffect(() => {
         dispatch(getItems(sessionUser.id))
+        dispatch(getFriends(sessionUser.id))
     }, [dispatch, item])
 
     // useEffect(() => {

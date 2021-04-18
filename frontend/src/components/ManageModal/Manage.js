@@ -12,6 +12,8 @@ function ManageModal() {
         dispatch(getBorrows(sessionUser.id))
     }, [dispatch])
 
+  
+
     return(
         <>
         <div className="auth-title">
@@ -28,11 +30,11 @@ function ManageModal() {
                     <th>Lent</th>
                     <th>Returned</th>
                 </tr>
-                <tr>
+                
                 {itemList.map(item => (
-        <Borrow key={item.id} id={item.id} title={item.title} desc={item.desc}/>
+        <Borrow key={item.id} id={item.id} title={item.title} borrower={item.desc}/>
         ))}
-        </tr>
+        
             </table>
 
         </div>

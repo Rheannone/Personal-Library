@@ -3,31 +3,38 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setOne, } from '../../store/borrows';
 
 
-function Borrow({}) {
+function Borrow({id, title}) {
     const dispatch = useDispatch();
     const sessionUser = useSelector((state) => state.session.user);
-    const borrows = useSelector((state) => state.borrows)
+    const borrowList = useSelector((state) => Object.values(state.borrows))
+ 
 
-    const addBorrow = async () => {
-        await dispatch( setOne() )
-    }
-
-
-
+        let lentdate
+        let borrower
+        borrowList.forEach(borrow => {
+        let singleBorrows = (Object.values(borrow))
+        let singleBorrowValues = Object.values(singleBorrows)
+         if (singleBorrowValues[singleBorrowValues.length -1] === id){
+              lentdate = singleBorrowValues[1]
+              borrower = singleBorrowValues[4]
+         }
+         else return null
+    })
+  
     return (
         <>
         <tr>
-            <td>
-                {/* friend selector */}
-                <p>friend</p>
+            <td key={id}>
+                {borrower ? <p>{borrower}</p> : <p>select a friend</p> }
+                
             </td>
             <td>
                 {/* item title */}
-                <p>item</p>
+                <p>{title}</p>
             </td>
             <td>
                 {/* date lent */}
-                <span onCick={addBorrow}></span>
+                {lentdate}
             </td>
             <td>
                 {/* date returned */}
