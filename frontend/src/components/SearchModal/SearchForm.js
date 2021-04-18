@@ -33,8 +33,8 @@ function SearchForm() {
 
 
     return (
-        <>
-        <h1>Search for Friends</h1>
+        <div className='auth-title'>
+        <h1 className='auth-groovy'><span>S</span><span>e</span><span>a</span><span>r</span><span>c</span><span>h</span></h1>
         <form onSubmit={handleSearch}>
         <input
         type="text"
@@ -48,7 +48,7 @@ function SearchForm() {
             )) : <p>no friends with that email address were found </p> }
             
         </form>
-        </>
+        </div>
     )
 };
 

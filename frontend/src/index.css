@@ -1,18 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Shadows+Into+Light+Two&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 h1 {
     font-family: 'Berkshire Swash', cursive;
     font-size: 6em;
+    color: purple;
     margin:0px;
     padding:0px;
   }
 
 h2, h3, h4, h5, h6 {
     font-family: 'Berkshire Swash', cursive;
-    color: darkbrown;
+    color: purple;
     margin:0px;
     padding:0px;
 
+  }
+p, li, ul, label, placeholder {
+    font-family: 'Roboto', sans-serif;
+    list-style: none;
+    line-height: 150%;
+}
+
+button {
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 1em;
+    color: purple;
+    background: transparent;
+    outline: none;
+    border: none;
+}
+
+table, th, td {
+    border: 2px solid grey;
+    border-collapse: collapse;
+    padding: 2px;
   }
 .navbutton {
     color: purple;

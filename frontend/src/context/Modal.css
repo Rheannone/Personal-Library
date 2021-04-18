@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash%family=Bebas+Neue&family=Shadows+Into+Light+Two&family=Roboto&display=swap');
 
 
-
-
 #modal {
   box-sizing: border-box;
   position: fixed;
@@ -22,14 +20,16 @@
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 #modal-content {
+  max-width: 70vw;
+  max-height: auto;
   padding: 20px;
   border-radius: 6px 6px 6px 6px;
   position: absolute;
-  background-color:rgba(255, 255, 255, 0.9);
+  background-color:rgba(255, 255, 255, 0.7);
 }
 
 .auth-title {
@@ -91,7 +91,7 @@ input {
   padding: 5px;
   padding-bottom: 0px;
   margin: 5px;
-  font-size: 2em;
+  font-size: 1em;
   font-family: 'Shadows Into Light Two', cursive;}
 
 /* .auth-form {

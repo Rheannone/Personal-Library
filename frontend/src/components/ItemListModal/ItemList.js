@@ -29,6 +29,11 @@ function ItemList() {
 
     return (
         <>
+        <div className="auth-title">
+          <h1 className='auth-groovy'>
+            <span>B</span><span>o</span><span>o</span><span>k</span><span>s</span>
+          </h1>
+        </div>
         <form onSubmit={handleSubmit}>
 
           <input type="text" value = {item} onChange={(e) => setItem(e.target.value)}/>

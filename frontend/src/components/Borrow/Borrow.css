@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@700&display=swap');
+
+.lent-stamp {
+    font-family:monospace;
+    font-weight: 900;
+    color: darkred;
+    transform: rotate(-10deg);
+    
+}

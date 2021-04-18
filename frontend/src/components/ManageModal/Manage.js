@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import Borrow from '../Borrow'
 import { getBorrows } from '../../store/borrows'
+import './Manage.css'
 
 function ManageModal() {
     const itemList = useSelector((state) => Object.values(state.items));
@@ -23,6 +24,7 @@ function ManageModal() {
             <div>
                 <p>{sessionUser.username}'s Library </p>
             </div>
+            <div className='table-container'>
             <table id="manage">
                 <tr>
                     <th>Borrower</th>
@@ -36,6 +38,7 @@ function ManageModal() {
         ))}
         
             </table>
+            </div>
 
         </div>
         </>

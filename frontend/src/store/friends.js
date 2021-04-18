@@ -87,7 +87,7 @@ function reducer(state = {}, action) {
             });
             return newState;
         case GET_ALL:
-            newState= {... state };
+            newState = { };
             action.payload?.data?.users?.forEach(user => {
                 newState[user.id] = {
                     id: user.id,

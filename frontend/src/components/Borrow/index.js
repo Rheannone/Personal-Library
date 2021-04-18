@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setOne, } from '../../store/borrows';
+import './Borrow.css'
 
 
 function Borrow({id, title}) {
@@ -34,7 +35,7 @@ function Borrow({id, title}) {
             </td>
             <td>
                 {/* date lent */}
-                {lentdate}
+               <p className='lent-stamp'>{lentdate}</p> 
             </td>
             <td>
                 {/* date returned */}

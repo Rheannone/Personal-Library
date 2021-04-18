@@ -9,9 +9,9 @@ function Splash() {
     const sessionUser = useSelector((state) => state.session.user);
 
 
-    if (sessionUser) {
-        return <Redirect to="/dashboard" />;
-      }
+      if (sessionUser) {
+    return <Redirect to="/dashboard" />;
+  }
 
 
 

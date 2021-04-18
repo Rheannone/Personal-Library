@@ -3,12 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { postFriend, deleteFriend, getFriends } from '../../store/friends'
 
 function Friend({id, name}) {
-  const sessionUser = useSelector((state) => state.session.user);
+    const sessionUser = useSelector((state) => state.session.user);
+    const friendlist = useSelector((state) => state.friends)
     const [edit, setEdit] = useState(false);
     const [text, setText ] = useState(name)
     const dispatch = useDispatch();
 
-    
+
 
     const handleAdd = e => {
       e.preventDefault();

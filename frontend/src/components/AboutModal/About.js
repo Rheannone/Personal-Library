@@ -9,7 +9,14 @@ function AboutModal() {
         </div>
         <div>
             <h2>Made by a curious software engineer...</h2>
-            <p>'My Groovy Library' is a an experiment in advanced CSS and the Google API. React/Redux is rendering data from the Express/Seqeulize backend.</p>
+            <p>'My Groovy Library' is a student project designed to explore the <b><u>Google API</u></b> and advanced frontend engineering.
+                Inspired by all the books I have lent to friends and never saw again, I designed a straightforward app to manage your home library.
+            </p>
+            <p>React and Redux make up a powerful frontend, quickly accessing data from the <b>Express and Sequelize</b> backend.
+                'My Groovy Library' implements <b><u>Google OAuth2 and bcrypt hashing</u></b> for authentication, maintaing session in Redux. React Context 
+                powers an  <b><u>easter egg...</u></b>. 
+                <center><p>💡  Can you find it? </p></center>
+            </p>
 
         </div>
         </>
