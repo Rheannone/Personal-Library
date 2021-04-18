@@ -1,8 +1,8 @@
 import { fetch } from './csrf';
 
-const SET_LIST = 'items/setList';
-const ADD_ONE = 'items/addOne';
-const REMOVE_ONE = 'items/removeOne';
+const SET_LIST = 'borrows/setList';
+const ADD_ONE = 'borrows/addOne';
+const REMOVE_ONE = 'borrows/removeOne';
 
 const setList = (list) => ({
     type: SET_LIST,
@@ -46,20 +46,20 @@ function reducer(state = {}, action) {
                     id: borrow.id,
                     lent: borrow.lent,
                     returned: borrow?.returned,
-                    ownerId: borrow.ownerID,
-                    borrowerId: borrow.borrowerId,
-                    itemId: borrow.itemid
+                    owner_id: borrow.ownerID,
+                    borrower_id: borrow.borrowerId,
+                    item_id: borrow.itemid
                 };
             });
             return newState;
         case ADD_ONE:
             newState = {...state};
-            newState[action.payload.id] = {
+            newState[action.payload] = {
                 lent: action.payload.lent,
                 returned: action.payload?.returned,
-                friendId: action.payload.borrowerId,
-                ownerId: action.payload.ownerId,
-                itemId: action.payload.itemid,
+                borrower_id: action.payload.borrowerId,
+                owner_id: action.payload.ownerId,
+                item_id: action.payload.itemid,
             }
             return newState;
         default:

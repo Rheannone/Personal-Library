@@ -13,6 +13,7 @@ import SearchFormModal from '../SearchModal'
 function Dashboard() {
     const dispatch = useDispatch();
     const sessionUser = useSelector((state) => state.session.user);
+    const borrows = useSelector((state) => state.borrows)
     const itemList = useSelector((state) => Object.values(state.items));
     const [item, setItem ] = useState('');
     const { themeName } = useTheme();
