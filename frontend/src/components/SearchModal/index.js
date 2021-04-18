@@ -7,7 +7,7 @@ function SearchFormModal() {
 
     return (
         <>
-    <button onClick={() => setShowModal(true)}>Add Friends</button>
+    <button onClick={() => setShowModal(true)} className='navbutton'>Add Friends</button>
     {showModal && (
         <Modal onClose={() => setShowModal(false)}>
             <SearchForm />

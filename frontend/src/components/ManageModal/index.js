@@ -8,7 +8,7 @@ function ManageModal() {
 
   return (
     <>
-      <button onClick={() => setShowModal(true)}>Manage</button>
+      <button onClick={() => setShowModal(true)} className='navbutton'>Manage</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <Manage />

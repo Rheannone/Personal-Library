@@ -43,8 +43,8 @@ function Navigation({ isLoaded }){
     className='navbar-container'
     style={themeName === 'light' ? {backgroundColor: "#d1341f"} : {backgroundColor: "#2c002e"}}
     >
+        <div className='links-container'>{isLoaded && sessionLinks}</div>
         
-        {isLoaded && sessionLinks}
         
     </div>
   );

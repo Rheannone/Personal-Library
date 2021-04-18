@@ -14,7 +14,19 @@ h2, h3, h4, h5, h6 {
     padding:0px;
 
   }
-  
+.navbutton {
+    color: purple;
+    font-family: 'Berkshire Swash', cursive;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-align: center;
+    margin: 10px;
+    transition: .2s;
+
+}
+.navbutton:hover {
+    text-shadow: 2px 2px #e4743a;}
 
 /* WHEN THE SCREEN IS LARGER THAN 1000px */
 @media screen and (min-width: 700px){
@@ -24,6 +36,10 @@ h2, h3, h4, h5, h6 {
         background-size: 150%;
         background-image:url("../src/images/1722.jpg");
 
+    }
+
+    .navbutton {
+        font-size: 2rem;
     }
     
     .dashboard-container {

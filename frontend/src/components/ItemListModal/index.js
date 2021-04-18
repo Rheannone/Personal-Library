@@ -8,7 +8,7 @@ function ItemListModal() {
 
   return (
     <>
-      <button onClick={() => setShowModal(true)}>My Library</button>
+      <button onClick={() => setShowModal(true)} className='navbutton'>My Library</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <ItemList />
