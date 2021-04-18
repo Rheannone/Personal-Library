@@ -46,9 +46,9 @@ function reducer(state = {}, action) {
                     id: borrow.id,
                     lent: borrow.lent,
                     returned: borrow?.returned,
-                    owner_id: borrow.ownerID,
-                    borrower_id: borrow.borrowerId,
-                    item_id: borrow.itemid
+                    owner_id: borrow.owner_id,
+                    borrower_id: borrow.borrower_id,
+                    item_id: borrow.item_id
                 };
             });
             return newState;
@@ -57,9 +57,9 @@ function reducer(state = {}, action) {
             newState[action.payload] = {
                 lent: action.payload.lent,
                 returned: action.payload?.returned,
-                borrower_id: action.payload.borrowerId,
-                owner_id: action.payload.ownerId,
-                item_id: action.payload.itemid,
+                borrower_id: action.payload.borrower_id,
+                owner_id: action.payload.owner_id,
+                item_id: action.payload.item_id,
             }
             return newState;
         default:

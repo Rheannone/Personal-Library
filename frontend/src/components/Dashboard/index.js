@@ -23,9 +23,9 @@ function Dashboard() {
         dispatch(getItems(sessionUser.id))
     }, [dispatch, item])
 
-    useEffect(() => {
-      dispatch(getBorrows(sessionUser.id))
-    }, [dispatch])
+    // useEffect(() => {
+    //   dispatch(getBorrows(sessionUser.id))
+    // }, [dispatch])
 
     const handleSubmit = e => {
       e.preventDefault();
