@@ -4,29 +4,18 @@ import { setOne, } from '../../store/borrows';
 import './Borrow.css'
 
 
-function Borrow({id, title}) {
+function Borrow({id, title, lent}) {
     const dispatch = useDispatch();
     const sessionUser = useSelector((state) => state.session.user);
-    const borrowList = useSelector((state) => Object.values(state.borrows))
- 
-
-        let lentdate
-        let borrower
-        borrowList.forEach(borrow => {
-        let singleBorrows = (Object.values(borrow))
-        let singleBorrowValues = Object.values(singleBorrows)
-         if (singleBorrowValues[singleBorrowValues.length -1] === id){
-              lentdate = singleBorrowValues[1]
-              borrower = singleBorrowValues[4]
-         }
-         else return null
-    })
-  
+    const borrows = useSelector((state) => Object.values(state.borrows));
+    
+    let borrowedItem = borrows.filter(item => id === item.item_id)
+    
     return (
         <>
         <tr>
             <td key={id}>
-                {borrower ? <p>{borrower}</p> : <p>select a friend</p> }
+                {borrowedItem ? <p>{borrowedItem[0]?.borrower_name}</p> : null}
                 
             </td>
             <td>
@@ -35,7 +24,7 @@ function Borrow({id, title}) {
             </td>
             <td>
                 {/* date lent */}
-               <p className='lent-stamp'>{lentdate}</p> 
+               <p className='lent-stamp'>{lent}</p> 
             </td>
             <td>
                 {/* date returned */}

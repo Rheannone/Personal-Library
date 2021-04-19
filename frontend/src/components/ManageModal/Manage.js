@@ -7,10 +7,15 @@ import './Manage.css'
 function ManageModal() {
     const itemList = useSelector((state) => Object.values(state.items));
     const sessionUser = useSelector((state) => state.session.user);
-    const borrows = useSelector((state) => state.borrows)
+    const borrows = useSelector((state) => Object.values(state.borrows))
     const dispatch = useDispatch();
-    console.log(borrows, "this is borrows")
+    console.log(itemList, "THIS IS ITEMLIST")
 
+    // all.forEach(object => {
+    //     if (object.lent){
+    //         console.log("GAHH")
+    //     }
+    // })
     useEffect(() => {
         dispatch(getBorrows(sessionUser.id))
     }, [dispatch])
@@ -35,7 +40,7 @@ function ManageModal() {
                 </tr>
                 
                 {itemList.map(item => (
-                    <Borrow key={item.id} id={item.id} title={item.title} borrower={item.desc}/>
+                    <Borrow key={item.id} id={item.id} title={item.title} lent={item.lent_date}/>
                     ))}
         
             </table>

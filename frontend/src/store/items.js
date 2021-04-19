@@ -45,6 +45,7 @@ export const updateOne = (item, id) => async (dispatch) => {
 }
 export const getItems = (userId) => async (dispatch) => {
     const response = await fetch(`/api/items/${userId}`);
+    console.log(response, "ITEMS RESPONSE")
     if (response.ok) {
         dispatch(setList(response));
     };
@@ -82,7 +83,8 @@ function reducer(state = {}, action) {
                     id: item.id,
                     title: item.title,
                     desc: item.desc,
-                    imgUrl: item.imgUrl
+                    imgUrl: item.imgUrl,
+                    lent_date: item.Borrow.lent, 
                 };
             });
             return newState;
