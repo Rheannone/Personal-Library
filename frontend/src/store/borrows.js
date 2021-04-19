@@ -30,6 +30,7 @@ export const setOne = (lent, returned, friendId) => async (dispatch) => {
 }
 export const getBorrows = (userId) => async (dispatch) => {
     const response = await fetch(`/api/borrows/${userId}`);
+    console.log(response, "RES FROM STORE")
     if (response.ok) {
         dispatch(setList(response));
     };
@@ -45,6 +46,7 @@ function reducer(state = {}, action) {
                 newState[borrow.id] = {
                     id: borrow.id,
                     lent: borrow.lent,
+                    borrower_name: borrow.Borrower.username,
                     returned: borrow?.returned,
                     owner_id: borrow.owner_id,
                     borrower_id: borrow.borrower_id,

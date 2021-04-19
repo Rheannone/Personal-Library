@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       references: {
         model: 'Users'
+      
       }
     },
     owner_id: {
@@ -35,8 +36,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Borrow.associate = function(models) {
     Borrow.belongsTo(models.Items, {foreignKey: 'item_id'});
-    Borrow.belongsTo(models.User, {foreignKey: 'owner_id'});
-    Borrow.belongsTo(models.User, {foreignKey: 'borrower_id' });
+    Borrow.belongsTo(models.User, {foreignKey: 'owner_id', as: 'Owner'});
+    Borrow.belongsTo(models.User, {foreignKey: 'borrower_id', as: 'Borrower' });
   };
   return Borrow;
 };

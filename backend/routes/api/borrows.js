@@ -1,6 +1,6 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
-const { Borrow } = require('../../db/models');
+const { Borrow, Items, User } = require('../../db/models');
 
 const router = express.Router();
 
@@ -22,7 +22,18 @@ asyncHandler(async function (req, res) {
     const borrowedItems = await Borrow.findAll({
         where: {
             owner_id: Number(req.params.userId)
-        }
+        },
+        include: [{
+            model: Items
+        },
+    {
+        model: User,
+        as: 'Owner'
+    }, {
+        model: User,
+        as: 'Borrower'
+    }
+]
     });
     return res.json({borrowedItems})
     })

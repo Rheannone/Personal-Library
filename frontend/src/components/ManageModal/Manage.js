@@ -7,13 +7,14 @@ import './Manage.css'
 function ManageModal() {
     const itemList = useSelector((state) => Object.values(state.items));
     const sessionUser = useSelector((state) => state.session.user);
+    const borrows = useSelector((state) => state.borrows)
     const dispatch = useDispatch();
+    console.log(borrows, "this is borrows")
 
     useEffect(() => {
         dispatch(getBorrows(sessionUser.id))
     }, [dispatch])
 
-  
 
     return(
         <div>
@@ -25,7 +26,7 @@ function ManageModal() {
                 
             <div className='table-container'>
             <table id="manage">
-            <caption>{sessionUser.username}'s Library </caption>
+            <caption><span>{sessionUser.username}</span>'s Library </caption>
                 <tr>
                     <th>Borrower</th>
                     <th>Title</th>

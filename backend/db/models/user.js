@@ -54,8 +54,8 @@ module.exports = (sequelize, DataTypes) => {
     User.hasMany(models.Items, {foreignKey: 'user_id'});
     User.hasMany(models.Friend, {foreignKey: 'friend_id'});
     User.hasMany(models.Friend, {foreignKey: 'friend_username'});
-    User.hasMany(models.Borrow, {foreignKey: 'borrower_id'});
-    User.hasMany(models.Borrow, {foreignKey: 'owner_id'})
+    User.hasMany(models.Borrow, {foreignKey: 'borrower_id', as: 'Borrower'});
+    User.hasMany(models.Borrow, {foreignKey: 'owner_id', as: 'Owner'})
     
   };
   User.prototype.toSafeObject = function () {
