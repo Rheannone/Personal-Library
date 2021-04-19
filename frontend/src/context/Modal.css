@@ -4,11 +4,12 @@
 #modal {
   box-sizing: border-box;
   position: fixed;
-  top: 0;
+  top: 200px;
   right: 0;
   left: 0;
   bottom: 0;
   display: flex;
+  max-height: 500px;
   flex-direction: column;
   justify-content: center;
   align-items: center;

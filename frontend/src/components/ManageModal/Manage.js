@@ -22,9 +22,10 @@ function ManageModal() {
         </div>
         <div>
             <div className='manage-modal'>
-                <p>{sessionUser.username}'s Library </p>
+                
             <div className='table-container'>
             <table id="manage">
+            <caption>{sessionUser.username}'s Library </caption>
                 <tr>
                     <th>Borrower</th>
                     <th>Title</th>
