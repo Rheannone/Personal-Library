@@ -10,6 +10,7 @@ function Friends() {
     const dispatch = useDispatch();
     const sessionUser = useSelector((state) => state.session.user);
     const friendList = useSelector((state) => Object.values(state.friends));
+    
 
 
     useEffect(() => {

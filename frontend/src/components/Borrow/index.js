@@ -11,6 +11,7 @@ function Borrow({id, title, lent}) {
     const friends = useSelector((state) => Object.values(state.friends));
     const [borrowerId, setBorrowerId] = useState('')
     const [item, setItem] = useState('');
+    const [returned, setReturned] = useState(true)
     let borrowedItem = borrows.filter(item => id === item.item_id)
 
     useEffect(() => {
@@ -24,6 +25,7 @@ function Borrow({id, title, lent}) {
     const submitLend = ()  => {
         dispatch(setOne(sessionUser.id, borrowerId, date, numId ))
         setItem(numId)
+        setReturned(false)
     }
 
     const handleReturn = () => {
@@ -62,7 +64,9 @@ function Borrow({id, title, lent}) {
             </td>
             <td>
                 {/* date returned */}
-                <p onClick={handleReturn}>Test</p>
+                <div onClick={handleReturn}>
+                    <p>stuff</p>
+                </div>
             </td>
         </tr>
 
