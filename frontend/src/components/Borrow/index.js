@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setOne,  getBorrows} from '../../store/borrows';
+import { setOne,  getBorrows, deleteOne} from '../../store/borrows';
 import './Borrow.css'
 
 
@@ -26,11 +26,10 @@ function Borrow({id, title, lent}) {
         setItem(numId)
     }
 
-
-
-
-
-    console.log(friends, "friend from map")
+    const handleReturn = () => {
+        console.log(borrowedItem? borrowedItem[0] : null, "one item")
+        dispatch(deleteOne(borrowedItem[0].id))
+    }
 
     return (
         <>
@@ -54,14 +53,14 @@ function Borrow({id, title, lent}) {
                 {/* date lent */}
                <p className='lent-stamp'>{borrowedItem.length ? <p>{borrowedItem[0]?.lent}</p> : 
                
-               <p className='select-hover' onClick={submitLend}>stuff</p>
+               <p className='select-hover' onClick={submitLend}>click to lend</p>
                }
                
                </p> 
             </td>
             <td>
                 {/* date returned */}
-                <p></p>
+                <p onClick={handleReturn}>Test</p>
             </td>
         </tr>
 

@@ -14,6 +14,11 @@ const addOne = (item) => ({
     payload: item
 });
 
+const removeOne = (id) => ({
+    type: REMOVE_ONE,
+    payload: id
+});
+
 export const setOne = (owner_id, borrower_id, lent, item_id) => async (dispatch) => {
 
     const response = await fetch(`/api/borrows`, {
@@ -35,6 +40,16 @@ export const getBorrows = (userId) => async (dispatch) => {
     if (response.ok) {
         dispatch(setList(response));
     };
+    return response;
+};
+
+export const deleteOne = (id) => async (dispatch) => {
+    const response = await fetch(`/api/borrows/${id}`, {
+        method: 'DELETE',
+    });
+    if (response.ok) {
+        dispatch(removeOne(id))
+    }
     return response;
 };
 
@@ -64,6 +79,10 @@ function reducer(state = {}, action) {
                 owner_id: action.payload.owner_id,
                 item_id: action.payload.item_id,
             }
+            return newState;
+        case REMOVE_ONE:
+            newState = {...state};
+            delete newState[action.payload];
             return newState;
         default:
             return state;

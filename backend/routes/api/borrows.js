@@ -54,7 +54,16 @@ router.post(
         })
         return res.json({lend})
     })
-    )
+)
+
+router.delete(
+    '/:id',
+    asyncHandler(async function (req, res) {
+        const borrow = await Borrow.findByPk(req.params.id);
+        await borrow.destroy();
+        return res.json({ message : "borrow deleted! "})
+    })
+)
 
 
 module.exports = router;
