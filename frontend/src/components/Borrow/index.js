@@ -11,12 +11,12 @@ function Borrow({id, title, lent}) {
     const friends = useSelector((state) => Object.values(state.friends));
     const [borrowerId, setBorrowerId] = useState('')
     const [item, setItem] = useState('');
+    let borrowedItem = borrows.filter(item => id === item.item_id)
 
     useEffect(() => {
         dispatch(getBorrows(sessionUser.id))
     }, [dispatch, item])
     
-    let borrowedItem = borrows.filter(item => id === item.item_id)
     const date = new Date()
 
     const numId = Number(id)
@@ -28,7 +28,8 @@ function Borrow({id, title, lent}) {
 
     const handleReturn = () => {
         console.log(borrowedItem? borrowedItem[0] : null, "one item")
-        dispatch(deleteOne(borrowedItem[0].id))
+        setItem("")
+        dispatch(deleteOne(borrowedItem[0]?.id))
     }
 
     return (
@@ -36,8 +37,9 @@ function Borrow({id, title, lent}) {
         <tr>
             <td key={id}>
                 {borrowedItem.length ? <p>{borrowedItem[0]?.borrower_name}</p> :
-                 <p className="select-hover"> <label for="cars">Choose a Friend:</label>
-                    <select name="cars" id="cars" onChange={(e) => setBorrowerId(e.target.value)}>
+                 <p className="select-hover"> <label for="friends"></label>
+                    <select name="friends" id="friends" onChange={(e) => setBorrowerId(e.target.value)}>
+                    <option value="">Choose A Friend:</option>
                    {friends.map(friend => (
                        <option value={friend.friendId} >{friend.username}</option>
                    ))}
