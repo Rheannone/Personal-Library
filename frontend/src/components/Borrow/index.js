@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setOne, } from '../../store/borrows';
+import { setOne,  getBorrows} from '../../store/borrows';
 import './Borrow.css'
 
 
@@ -10,7 +10,11 @@ function Borrow({id, title, lent}) {
     const borrows = useSelector((state) => Object.values(state.borrows));
     const friends = useSelector((state) => Object.values(state.friends));
     const [borrowerId, setBorrowerId] = useState('')
-    console.log(friends, "friends")
+    const [item, setItem] = useState('');
+
+    useEffect(() => {
+        dispatch(getBorrows(sessionUser.id))
+    }, [dispatch, item])
     
     let borrowedItem = borrows.filter(item => id === item.item_id)
     const date = new Date()
@@ -18,9 +22,11 @@ function Borrow({id, title, lent}) {
     const numId = Number(id)
 
     const submitLend = ()  => {
-        // console.log(borrowerId, "this is borrower")
         dispatch(setOne(sessionUser.id, borrowerId, date, numId ))
+        setItem(numId)
     }
+
+
 
 
 
