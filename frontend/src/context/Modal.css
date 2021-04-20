@@ -93,7 +93,8 @@ input {
   padding-bottom: 0px;
   margin: 5px;
   font-size: 1em;
-  font-family: 'Shadows Into Light Two', cursive;}
+  font-family: 'Shadows Into Light Two', cursive;
+}
 
 /* .auth-form {
   grid-template-areas: 

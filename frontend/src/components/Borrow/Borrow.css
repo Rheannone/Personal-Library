@@ -7,3 +7,14 @@
     transform: rotate(-10deg);
     
 }
+
+.select-hover {
+    color: whitesmoke;
+    transition: .2s;
+    opacity: .2;
+}
+.select-hover:hover {
+    color: black;
+    opacity: 1;
+
+}

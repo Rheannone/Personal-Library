@@ -14,13 +14,15 @@ const addOne = (item) => ({
     payload: item
 });
 
-export const setOne = (lent, returned, friendId) => async (dispatch) => {
-    const response = await fetch(`/api/borrow/`, {
+export const setOne = (owner_id, borrower_id, lent, item_id) => async (dispatch) => {
+
+    const response = await fetch(`/api/borrows`, {
         method: "POST",
         body: JSON.stringify({
-            lent, 
-            returned,
-            friendId,
+            owner_id, 
+            borrower_id,
+            lent,
+            item_id
         }),
     });
     if (response.ok) {

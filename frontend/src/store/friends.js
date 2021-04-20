@@ -62,6 +62,7 @@ export const searchUsers = (email) => async (dispatch) => {
 
 export const getFriends = (userId) => async (dispatch) => {
     const response = await fetch(`/api/friends/${userId}`);
+    console.log(response, "FRIENDS RESPONSE")
     if (response.ok) {
         dispatch(setFriends(response))
     };
@@ -82,7 +83,9 @@ function reducer(state = {}, action) {
             action.payload?.data?.friends?.forEach(friend => {
                 newState[friend.id] ={
                     id: friend.id,
-                    username: friend.friend_username
+                    username: friend.friend_username,
+                    friendId: friend.friend_id
+
                 };
             });
             return newState;

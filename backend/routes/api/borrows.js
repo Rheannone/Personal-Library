@@ -42,12 +42,13 @@ asyncHandler(async function (req, res) {
 router.post(
     '/',
     asyncHandler(async function(req, res) {
+
         const lend = await Borrow.create({
             lent: req.body.lent,
             returned: req.body.returned,
-            item_id: req.body.itemId,
-            borrower_id: req.body.borrowerId,
-            owner_id: req.body.ownerId
+            item_id: req.body.item_id,
+            borrower_id: req.body.borrower_id,
+            owner_id: req.body.owner_id
 
 
         })

@@ -31,7 +31,7 @@ function ManageModal() {
                 
             <div className='table-container'>
             <table id="manage">
-            <caption><span>{sessionUser.username}</span>'s Library </caption>
+            <caption><span className='library-caption'>{sessionUser.username}'s Library </span></caption>
                 <tr>
                     <th>Borrower</th>
                     <th>Title</th>
