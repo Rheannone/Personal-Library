@@ -18,7 +18,7 @@ function Splash() {
     
 
     return (
-        <>
+        <div className='splash-container'>
         <div className="splash-title">
         <h1 className='splash-groovy'>
         <div className='splash-spans'>
@@ -26,7 +26,7 @@ function Splash() {
         </div>
         </h1>
         </div>
-        </>
+        </div>
         )
         
     };

@@ -12,9 +12,12 @@
     color: whitesmoke;
     transition: .2s;
     opacity: .2;
+    cursor: pointer;
+
 }
 .select-hover:hover {
     color: black;
     opacity: 1;
+    cursor: pointer;
 
 }
