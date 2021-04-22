@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
+import { useTheme } from '../../context/ThemeContext'
+
 
 
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
+  const {themeName, setThemeName} = useTheme();
   const [showMenu, setShowMenu] = useState(false);
   
   const openMenu = () => {
@@ -27,6 +30,7 @@ function ProfileButton({ user }) {
 
   const logout = (e) => {
     e.preventDefault();
+    setThemeName('day')
     dispatch(sessionActions.logout());
   };
 

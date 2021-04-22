@@ -9,13 +9,7 @@ function ManageModal() {
     const sessionUser = useSelector((state) => state.session.user);
     const borrows = useSelector((state) => Object.values(state.borrows))
     const dispatch = useDispatch();
-    console.log(itemList, "THIS IS ITEMLIST")
 
-    // all.forEach(object => {
-    //     if (object.lent){
-    //         console.log("GAHH")
-    //     }
-    // })
     useEffect(() => {
         dispatch(getBorrows(sessionUser.id))
     }, [dispatch])
@@ -36,7 +30,7 @@ function ManageModal() {
                     <th>Borrower</th>
                     <th>Title</th>
                     <th>Lent</th>
-                    <th>Returned</th>
+                    <th>Available</th>
                 </tr>
                 
                 {itemList.map(item => (

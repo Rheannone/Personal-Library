@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import night from '../../images/night.gif'
+import day from '../../images/day.gif'
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import SignupModal from '../SignupModal'
@@ -9,7 +11,6 @@ import ItemListModal from '../ItemListModal'
 import SearchFormModal from '../SearchModal'
 import ManageModal from '../ManageModal'
 import { useTheme } from '../../context/ThemeContext'
-
 import './Navigation.css';
 
 function Navigation({ isLoaded }){
@@ -38,10 +39,11 @@ function Navigation({ isLoaded }){
     );
   }
 
+  const nightBg = './../images/night-nav.gif'
   return (
     <div 
     className='navbar-container'
-    style={themeName === 'light' ? {backgroundColor: "#d1341f"} : {backgroundColor: "#2c002e"}}
+    style={themeName === 'dark' ? {backgroundImage: `url(${night})`} : {backgroundColor: `orange`}}
     >
         <div className='links-container'>{isLoaded && sessionLinks}</div>
         
