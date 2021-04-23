@@ -16,6 +16,15 @@ function AboutModal() {
                 'My Groovy Library' implements <b><u>Google OAuth2 and bcrypt hashing</u></b> for authentication, maintaing session in Redux. React Context 
                 powers an  <b><u>easter egg...</u></b>. 
                 <center><p>💡  Can you find it? </p></center>
+                <hr></hr>
+                <center><h2>Coming in Update 1.0.1:</h2>
+                <ul>
+                    <li>Facebook OAut2</li>
+                    <li>Improved Friend Search</li>
+                    <li>Borrow History</li>
+                    <li>Profile Photos</li>
+                </ul>
+            </center>
             </p>
 
         </div>
