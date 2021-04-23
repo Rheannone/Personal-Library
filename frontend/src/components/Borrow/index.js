@@ -42,7 +42,7 @@ function Borrow({id, title, lent}) {
             <td key={id}>
                 {borrowedItem.length ? <p>{borrowedItem[0]?.borrower_name}</p> :
                  <p className="select-hover"> <label for="friends"></label>
-                    <select name="friends" id="friends" onChange={(e) => setBorrowerId(e.target.value)}>
+                    <select name="friends" id="friends" onChange={(e) => setBorrowerId(e.target.value)} onClick={(e) => setBorrowerId(e.target.value)}>
                     <option value="">Choose A Friend:</option>
                    {friends.map(friend => (
                        <option value={friend.friendId} >{friend.username}</option>
