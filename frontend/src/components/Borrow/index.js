@@ -14,13 +14,14 @@ function Borrow({id, title, lent}) {
     const [returned, setReturned] = useState(true)
     let borrowedItem = borrows.filter(item => id === item.item_id)
 
-    useEffect(() => {
-        dispatch(getBorrows(sessionUser.id))
-    }, [dispatch, item])
-    
     const date = new Date()
 
     const numId = Number(id)
+
+    useEffect(() => {
+        dispatch(getBorrows(sessionUser.id))
+    }, [dispatch, item, returned, borrowerId, numId])
+    
 
     const submitLend = ()  => {
         dispatch(setOne(sessionUser.id, borrowerId, date, numId ))
@@ -31,7 +32,8 @@ function Borrow({id, title, lent}) {
     const handleReturn = () => {
         console.log(borrowedItem? borrowedItem[0] : null, "one item")
         setItem("")
-        dispatch(deleteOne(borrowedItem[0]?.id))
+        setReturned(true)
+        dispatch(deleteOne(borrowedItem[0].id))
     }
 
     return (
@@ -53,6 +55,7 @@ function Borrow({id, title, lent}) {
                 {/* item title */}
                 <p>{title}</p>
             </td>
+            {/* github */}
             <td>
                 {/* date lent */}
                <p className='lent-stamp'>{borrowedItem.length ? <p>{borrowedItem[0]?.lent}</p> : 
@@ -65,7 +68,7 @@ function Borrow({id, title, lent}) {
             <td>
                 {/* date returned */}
                 <div onClick={handleReturn}>
-                    <p>stuff</p>
+                {borrowedItem.length ? <h4><i class="fas fa-times-circle"> Click to Return</i></h4> : <h4><i class="fas fa-check-square"></i></h4> }
                 </div>
             </td>
         </tr>
