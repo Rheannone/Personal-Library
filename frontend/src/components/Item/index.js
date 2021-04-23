@@ -25,8 +25,8 @@ function Item({id, title, desc}) {
         )}
         {!edit && (
           <li>
-            {text} <span onClick={handleDelete}>x </span>
-            <span onClick={flipEdit}> edit</span>
+            {text} <span onClick={handleDelete}><i class="fas fa-trash-alt"></i></span>
+            <span onClick={flipEdit}> <i class="fas fa-pencil-alt"></i></span>
           </li>
         )}
       </>

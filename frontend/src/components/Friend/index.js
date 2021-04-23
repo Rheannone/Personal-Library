@@ -29,7 +29,7 @@ function Friend({id, name}) {
         )}
         {!edit && (
           <li>
-            {text} <span onClick={handleAdd}>+</span><span onClick={handleDelete}>x</span>
+            {text} <span onClick={handleAdd}>+</span><span onClick={handleDelete}><i class="fas fa-trash-alt"></i></span>
             
           </li>
         )}
