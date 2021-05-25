@@ -39,6 +39,17 @@ function LoginForm() {
       }
     );
   }
+
+  const demoLogin = () => {
+    let credential = 'demo@user.io';
+    let password = 'password'
+    return dispatch(sessionActions.login({credential, password})).catch(
+      (res) => {
+        if (res.data && res.data.errors) setErrors(res.data.errors);
+      }
+    );
+  }
+
   return (
     <>
     <div className="auth-title">
@@ -78,6 +89,8 @@ function LoginForm() {
         </label>
         <button type="submit">Log In</button>
       </form>
+      <button type="button" onClick={demoLogin}>Demo Login</button>
+
     </>
   );
 }
