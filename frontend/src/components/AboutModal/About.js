@@ -19,7 +19,7 @@ function AboutModal() {
                 <hr></hr>
                 <center><h2>Coming in Update 1.0.1:</h2>
                 <ul>
-                    <li>Facebook OAut2</li>
+                    <li>Facebook OAuth2</li>
                     <li>Improved Friend Search</li>
                     <li>Borrow History</li>
                     <li>Profile Photos</li>
